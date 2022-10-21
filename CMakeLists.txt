@@ -15,13 +15,16 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wl,--no-as-needed")
 
 # find dependencies using catkin
 
-find_package(catkin REQUIRED
+find_package(catkin REQUIRED solo_description
   COMPONENTS
 )
 catkin_package(
   CATKIN_DEPENDS
 )
 
+install(DIRECTORY config/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
+  PATTERN ".svn" EXCLUDE)
 
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
