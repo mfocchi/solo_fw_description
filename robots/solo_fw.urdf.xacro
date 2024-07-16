@@ -10,13 +10,11 @@
     <xacro:arg name="flywheel2" default="false"/>
     <xacro:arg name="angle_deg" default="0.0"/> 
     <xacro:arg name="flywheel4" default="false"/>
-    <xacro:arg name="new_gazebo_version" default="false"/>	
     <xacro:arg name="robot_name" default="solo_fw"/>	
 
 
     <xacro:include filename="$(find solo_description)/robots/solo.urdf.xacro">
         <xacro:arg name="task_period" value="$(arg task_period)"/>
-	<xacro:arg name="new_gazebo_version" value="$(arg new_gazebo_version)"/>
         <xacro:arg name="robot_name" value="$(arg robot_name)"/>
 
     </xacro:include>
