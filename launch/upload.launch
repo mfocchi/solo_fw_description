@@ -6,14 +6,14 @@
 
 
         <!-- Load the sensors that measured the internal wrench in the joints -->
-        <arg name="internal_wrench" default="false"/>
+        <arg name="load_force_sensors" default="false"/>
         <arg name="flywheel2" default="true" />
-  	<arg name="flywheel4" default="false" />
+        <arg name="flywheel4" default="false" />
 
 
         <!-- send solo urdf to param server -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find solo_fw_description)/robots/solo_fw.urdf.xacro'
-         flywheel2:=$(arg flywheel2)  flywheel4:=$(arg flywheel4)  task_period:=$(arg task_period)"/>
+         flywheel2:=$(arg flywheel2)  flywheel4:=$(arg flywheel4)  load_force_sensors:=$(arg load_force_sensors)  task_period:=$(arg task_period)"/>
 
         <!-- send solo semantic description srdf to param server -->
         <param name="robot_semantic_description" command="$(find xacro)/xacro --inorder '$(find solo_fw_description)/robots/solo_fw.srdf.xacro'" />
